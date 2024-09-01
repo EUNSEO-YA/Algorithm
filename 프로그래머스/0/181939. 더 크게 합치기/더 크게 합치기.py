@@ -1,6 +1,6 @@
 def solution(a, b):
-	
-	str1 = int(str(a) + str(b))
-	str2 = int(str(b) + str(a))
-	
-	return max(str1, str2)
+    
+    n1 = int(str(a)+str(b))
+    n2 = int(str(b)+str(a))
+             
+    return max(n1, n2)
