@@ -6,9 +6,9 @@ BaekjoonHub를 통해 자동으로 코드가 업로드됩니다.
 ---
 
 ## 📂 디렉토리 구조
-📁 Algorithm
-├── 📁 백준          # 백준(BOJ) 문제 풀이
-├── 📁 프로그래머스  # 프로그래머스 문제 풀이
+📁 Algorithm<br>
+├── 📁 백준 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 백준(BOJ) 문제 풀이<br>
+├── 📁 프로그래머스 &nbsp;# 프로그래머스 문제 풀이<br>
 └── README.md
 
 ---
