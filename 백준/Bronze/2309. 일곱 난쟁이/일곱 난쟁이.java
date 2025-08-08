@@ -1,29 +1,29 @@
-import java.util.Arrays;
 import java.util.Scanner;
+import java.util.Arrays;
 
-public class Main {
+class Main {
     public static void main(String[] args) {
-        int[] arr = new int[9];
-        int[] answer = new int[7];
-        int sum = 0;
-        
         Scanner sc = new Scanner(System.in);
-        
+        int[] h = new int[9];
+        int sum = 0;
+
         for(int i = 0; i < 9; i++) {
-            arr[i] = sc.nextInt();
-            sum += arr[i];
+            h[i] = sc.nextInt();
+            sum += h[i];
         }
 
-        boolean found = false;
+        int gap = sum - 100;
 
+        Arrays.sort(h);
+        boolean found = false;
+        
         for(int i = 0; i < 9; i++) {
             for(int j = i + 1; j < 9; j++) {
-                if( (arr[i] + arr[j] == sum - 100) ) {
-                    int idx = 0;
-
+                if(h[i] + h[j] == gap) {
                     for(int k = 0; k < 9; k++) {
-                        if( k != i && k != j) {
-                            answer[idx++] = arr[k];
+                        if(k == i || k == j) continue;
+                        else {
+                            System.out.println(h[k]);
                         }
                     }
                     found = true;
@@ -32,11 +32,5 @@ public class Main {
             }
             if(found) break;
         }
-        
-        Arrays.sort(answer);
-        for(int i: answer) {
-            System.out.println(i);
-        }
-
     }
 }
