@@ -1,8 +1,8 @@
 import java.util.*;
 
 class Main {
-    static ArrayList<Integer>[] graph;
     static boolean[] visited;
+    static ArrayList<Integer>[] graph;
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -10,7 +10,6 @@ class Main {
         int m = sc.nextInt();
 
         graph = new ArrayList[n + 1];
-        visited = new boolean[n + 1];
         for(int i = 1; i <= n; i++) {
             graph[i] = new ArrayList<>();
         }
@@ -24,6 +23,7 @@ class Main {
 
         int count = 0;
 
+        visited = new boolean[n + 1];
         for(int i = 1; i <= n; i++) {
             if(!visited[i]) {
                 dfs(i);
@@ -34,11 +34,11 @@ class Main {
         System.out.println(count);
     }
 
-    static void dfs(int node) {
-        visited[node] = true;
+    static void dfs(int num) {
+        visited[num] = true;
 
-        for(int next: graph[node]) {
-            if(!visited[next]) {
+        for(int next : graph[num]) {
+            if(!visited[next]){
                 dfs(next);
             }
         }
