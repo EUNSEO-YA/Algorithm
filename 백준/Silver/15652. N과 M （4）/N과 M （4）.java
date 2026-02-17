@@ -3,7 +3,6 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-	
 	static int N, M;
 	static int[] result;
 	static StringBuilder sb = new StringBuilder();
@@ -16,14 +15,13 @@ public class Main {
 		M = Integer.parseInt(st.nextToken());
 		
 		result = new int[M];
-		
 		dfs(0, 1);
 		
 		System.out.println(sb);
 	}
-	
-	static void dfs(int depth, int start) {
-		if(depth == M) {
+
+	static void dfs(int idx, int start) {
+		if(idx == M) {
 			for(int i = 0; i < result.length; i++) {
 				sb.append(result[i]).append(" ");
 			}
@@ -32,8 +30,8 @@ public class Main {
 		}
 		
 		for(int i = start; i <= N; i++) {
-			result[depth] = i;
-			dfs(depth + 1, i);
+			result[idx] = i;
+			dfs(idx + 1, i);
 		}
 	}
 }
