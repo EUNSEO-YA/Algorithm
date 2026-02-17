@@ -3,13 +3,11 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-	
+
 	static int N, M;
 	static int[] result;
-	static boolean[] visited;
-	
 	static StringBuilder sb = new StringBuilder();
-
+	
 	public static void main(String[] args) throws Exception {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		StringTokenizer st = new StringTokenizer(br.readLine());
@@ -18,14 +16,13 @@ public class Main {
 		M = Integer.parseInt(st.nextToken());
 		
 		result = new int[M];
-		visited = new boolean[N + 1];
-		
 		dfs(0);
+		
 		System.out.println(sb);
 	}
-	
-	static void dfs(int depth) {
-		if(depth == M) {
+
+	static void dfs(int idx) {
+		if(idx == M) {
 			for(int i = 0; i < result.length; i++) {
 				sb.append(result[i]).append(" ");
 			}
@@ -34,9 +31,9 @@ public class Main {
 		}
 		
 		for(int i = 1; i <= N; i++) {
-			result[depth] = i;
+			result[idx] = i;
 			
-			dfs(depth + 1);
+			dfs(idx + 1);
 		}
 	}
 }
